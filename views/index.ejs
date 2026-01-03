@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <%- include("partials/animations") %>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-6">
+
+  <div class="max-w-3xl mx-auto fade-up">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-4xl font-extrabold text-white">💬 Message Board</h1>
+
+      <a href="/new"
+        class="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-xl
+               backdrop-blur hover:bg-white/30 transition">
+        <i data-lucide="plus-circle"></i> New
+      </a>
+    </div>
+
+    <div class="space-y-5">
+      <% messages.forEach((msg, i) => { %>
+        <div class="bg-white/20 backdrop-blur border border-white/30
+                    rounded-2xl p-5 shadow-xl
+                    hover:scale-[1.02] transition
+                    fade-up delay-<%= (i % 3) + 1 %>">
+
+          <div class="flex justify-between">
+            <div>
+              <p class="text-white font-semibold text-lg"><%= msg.user %></p>
+              <p class="text-white/70 text-sm"><%= msg.added.toLocaleString() %></p>
+            </div>
+
+            <a href="/message/<%= i %>" class="text-white hover:underline">
+              Open →
+            </a>
+          </div>
+
+          <p class="mt-4 text-white text-lg"><%= msg.text %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <script>lucide.createIcons()</script>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Message</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600
+             flex items-center justify-center p-6">
+
+  <div class="bg-white/20 backdrop-blur border border-white/30
+              rounded-2xl p-8 max-w-xl shadow-2xl fade-up">
+
+    <h2 class="text-2xl font-bold text-white"><%= message.user %></h2>
+    <p class="text-white/70 text-sm"><%= message.added.toLocaleString() %></p>
+
+    <p class="text-white text-lg mt-6"><%= message.text %></p>
+
+    <a href="/" class="text-white hover:underline mt-6 inline-block">
+      ← Back
+    </a>
+  </div>
+
+  <script>lucide.createIcons()</script>
+</body>
+</html>
