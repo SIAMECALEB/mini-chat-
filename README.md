@@ -2,8 +2,7 @@
 
 A simple mini chat application built to practice JavaScript fundamentals, DOM manipulation, and basic front-end logic as part of **The Odin Project** curriculum.
 
-## 🔗 Live Demo
-🌐 https://your-live-site-link.netlify.app  
+## 🔗 Live Demo 
 📂 https://github.com/SIAMECALEB/mini-chat-
 
 ## 📌 About the Project
